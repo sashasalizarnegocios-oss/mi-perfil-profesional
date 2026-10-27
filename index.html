@@ -354,17 +354,6 @@
 
         <section id="habilidades">
             
-<button onclick="mostrarHabilidades()">
-    Mostrar / Ocultar habilidades
-</button>
-
-<div id="contenido-habilidades">
-    <h3>Conocimientos</h3>
-    <p>Redacción jurídica, LegalTech y Derecho Administrativo.</p>
-
-    <h3>Idiomas</h3>
-    <p>Español nativo e inglés avanzado.</p>
-</div>
             
             <h2>Habilidades y competencias</h2>
 
@@ -437,17 +426,24 @@
     </footer>
 
    
+
 <script>
     function mostrarHabilidades() {
         let habilidades = document.getElementById("contenido-habilidades");
+        let boton = document.getElementById("boton-habilidades");
 
         if (habilidades.style.display === "none") {
             habilidades.style.display = "block";
+            boton.textContent = "Ocultar habilidades";
+            boton.setAttribute("aria-expanded", "true");
         } else {
             habilidades.style.display = "none";
+            boton.textContent = "Mostrar habilidades";
+            boton.setAttribute("aria-expanded", "false");
         }
     }
 </script>
+
 
 
 </body>
