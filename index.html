@@ -1,14 +1,454 @@
-function mostrarHabilidades() {
-    let habilidades = document.getElementById("contenido-habilidades");
-    let boton = document.getElementById("boton-habilidades");
 
-    if (habilidades.style.display === "none") {
-        habilidades.style.display = "block";
-        boton.textContent = "Ocultar habilidades";
-        boton.setAttribute("aria-expanded", "true");
-    } else {
-        habilidades.style.display = "none";
-        boton.textContent = "Mostrar habilidades";
-        boton.setAttribute("aria-expanded", "false");
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Profesional - Sasha Salizar</title>
+
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f5fbff;
+            color: #344054;
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        header {
+            background-color: #bde7f7;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        .foto-perfil {
+            width: 220px;
+            height: 260px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 18px;
+            border: 5px solid white;
+            box-shadow: 0 5px 18px #91bfd3;
+        }
+
+        header h1 {
+            font-size: 35px;
+            color: #29465b;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #45677d;
+            font-size: 16px;
+        }
+
+        nav {
+            background-color: white;
+            text-align: center;
+            padding: 18px;
+            border-bottom: 2px solid #d6effa;
+        }
+
+        nav a {
+            color: #426a83;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1596c4;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 16px;
+            border: 1px solid #e3f2fa;
+            box-shadow: 0 4px 15px #e5eff5;
+        }
+
+        h2 {
+            color: #368bb0;
+            font-size: 24px;
+            border-bottom: 2px solid #bde7f7;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #345b73;
+            margin-bottom: 5px;
+        }
+
+        h4 {
+            color: #4389a8;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .fecha {
+            color: #7195aa;
+            font-size: 14px;
+            margin-top: 3px;
+        }
+
+        .experiencia {
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e3f2fa;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            background-color: #e1f5fe;
+            color: #386b84;
+            padding: 7px 14px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #bde7f7;
+            color: #29465b;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 20px;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        button:hover {
+            background-color: #91d5ef;
+        }
+
+        a {
+            color: #2887ad;
+        }
+
+        footer {
+            background-color: #bde7f7;
+            color: #345b73;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 27px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+            }
+
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="foto.jpg"
+             alt="Fotografía profesional de Sasha"
+             class="foto-perfil">
+
+        <h1>Sasha Mellrouse Salizar Cuba</h1>
+        <p>Estudiante de Derecho | LegalTech | Innovación Legal</p>
+        <p>Universidad Científica del Sur</p>
+    </header>
+
+    <nav>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#educacion">Educación</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <main>
+
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+
+            <p>
+                Soy estudiante de Derecho de la Universidad
+                Científica del Sur, perteneciente al quinto
+                superior. Mis principales áreas de interés
+                son el Derecho Tecnológico, el Derecho
+                Administrativo y el Derecho Ambiental.
+            </p>
+
+            <p>
+                Cuento con experiencia en LegalTech,
+                investigación jurídica, liderazgo académico
+                y coordinación de proyectos institucionales.
+                Actualmente me desempeño como Directora de
+                Relaciones Interinstitucionales de Lex Sphere
+                y Delegada General del voluntariado Tech&Law.
+            </p>
+        </section>
+
+        <section id="educacion">
+            <h2>Formación académica</h2>
+
+            <h3>Universidad Científica del Sur</h3>
+            <p><b>Carrera:</b> Derecho</p>
+            <p class="fecha">Abril 2023 - Actualidad</p>
+            <p>Estudiante perteneciente al quinto superior.</p>
+
+            <h3>Formación complementaria</h3>
+            <ul>
+                <li>Diplomado en Derecho Digital e Inteligencia Artificial (2026).</li>
+                <li>Microcredencial en Inteligencia Artificial y Protección del Consumidor.</li>
+                <li>III Congreso Internacional de Tech&Law (2025).</li>
+                <li>I Congreso Nacional e Internacional de Derecho Ambiental (2024).</li>
+                <li>Conferencia "La Bicameralidad en el Perú" (2025).</li>
+            </ul>
+        </section>
+
+        <section id="experiencia">
+            <h2>Experiencia profesional y académica</h2>
+
+            <div class="experiencia">
+                <h3>Asociación Lex Sphere</h3>
+
+                <h4>Directora de Relaciones Interinstitucionales</h4>
+                <p class="fecha">Agosto 2026 - Actualidad</p>
+
+                <ul>
+                    <li>Gestión de relaciones institucionales con asociaciones, organizaciones y estudios jurídicos.</li>
+                    <li>Elaboración y coordinación de propuestas de alianzas y convenios de colaboración.</li>
+                    <li>Organización de reuniones con representantes de instituciones externas.</li>
+                    <li>Coordinación con las diferentes comisiones para desarrollar actividades académicas.</li>
+                    <li>Redacción de comunicaciones institucionales y seguimiento de posibles alianzas.</li>
+                </ul>
+
+                <h4>Directora de la Comisión de Revisión y Control Académico</h4>
+                <p class="fecha">Enero 2026 - Agosto 2026</p>
+
+                <ul>
+                    <li>Dirección de la Comisión de Revisión y Control Académico.</li>
+                    <li>Revisión y redacción de documentos, artículos jurídicos y políticos, discursos y boletines.</li>
+                </ul>
+            </div>
+
+            <div class="experiencia">
+                <h3>Tech&Law</h3>
+                <h4>Delegada General del Voluntariado</h4>
+                <p class="fecha">Enero 2025 - Actualidad</p>
+
+                <ul>
+                    <li>Dirección y supervisión de equipos de voluntarios.</li>
+                    <li>Distribución y seguimiento de tareas.</li>
+                    <li>Coordinación de cronogramas y proyectos.</li>
+                    <li>Apoyo en la organización de eventos académicos.</li>
+                </ul>
+            </div>
+
+            <div class="experiencia">
+                <h3>Juztina LLC</h3>
+                <h4>Legal Growth Associate</h4>
+                <p class="fecha">Diciembre 2024 - Marzo 2025</p>
+
+                <ul>
+                    <li>Gestión de actividades de marketing y ventas.</li>
+                    <li>Atención y seguimiento de clientes.</li>
+                    <li>Identificación de errores y mejoras de procesos.</li>
+                    <li>Elaboración de contratos y documentos societarios.</li>
+                </ul>
+            </div>
+
+            <div class="experiencia">
+                <h3>Asistente de Cátedra - Acto Jurídico</h3>
+                <p>Docente Tatiana Gutiérrez</p>
+                <p class="fecha">Agosto 2024 - Actualidad</p>
+
+                <ul>
+                    <li>Elaboración de material académico.</li>
+                    <li>Revisión de casos jurídicos.</li>
+                    <li>Apoyo en las sesiones de clase.</li>
+                </ul>
+            </div>
+
+            <div class="experiencia">
+                <h3>Asistente de Cátedra - Derecho Constitucional</h3>
+                <p>Docente Walter Palomino</p>
+                <p class="fecha">Enero 2025 - Junio 2025</p>
+
+                <ul>
+                    <li>Preparación de materiales y lecturas.</li>
+                    <li>Acompañamiento académico a estudiantes.</li>
+                </ul>
+            </div>
+
+            <div class="experiencia">
+                <h3>Mundalis & Lex Sphere</h3>
+                <h4>Pasante - Rights of Nature</h4>
+                <p class="fecha">Enero 2026 - Mayo 2026</p>
+
+                <ul>
+                    <li>Elaboración de artículos jurídicos sobre derechos de la naturaleza.</li>
+                    <li>Creación de contenido jurídico para redes sociales.</li>
+                    <li>Apoyo en la página web de Mundalis.</li>
+                </ul>
+            </div>
+
+            <div class="experiencia">
+                <h3>Clínica de Litigación Ambiental</h3>
+                <h4>Voluntaria</h4>
+                <p class="fecha">Septiembre 2025 - Actualidad</p>
+
+                <ul>
+                    <li>Elaboración de notas de prensa.</li>
+                    <li>Apoyo en coordinaciones internas.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="proyectos">
+            <h2>Proyectos académicos</h2>
+
+            <h3>Mapeo LegalTech Perú 2025</h3>
+            <p><b>Rol:</b> Líder de Proyecto</p>
+            <p class="fecha">Octubre 2025 - Diciembre 2025</p>
+
+            <p>
+                Organización y liderazgo del equipo de
+                investigación, coordinación de actividades
+                y seguimiento de entregables.
+            </p>
+
+            <h3>Informe Perú Sostenible</h3>
+            <p><b>Rol:</b> Coautora</p>
+            <p class="fecha">Febrero 2026</p>
+
+            <p>
+                Análisis de las propuestas ambientales
+                de los planes de gobierno 2026-2031.
+            </p>
+        </section>
+
+        <section id="habilidades">
+            
+<button onclick="mostrarHabilidades()">
+    Mostrar / Ocultar habilidades
+</button>
+
+<div id="contenido-habilidades">
+    <h3>Conocimientos</h3>
+    <p>Redacción jurídica, LegalTech y Derecho Administrativo.</p>
+
+    <h3>Idiomas</h3>
+    <p>Español nativo e inglés avanzado.</p>
+</div>
+            
+            <h2>Habilidades y competencias</h2>
+
+            <button type="button" onclick="mostrarHabilidades()"
+                    id="boton-habilidades"
+                    aria-controls="contenido-habilidades"
+                    aria-expanded="true">
+                Ocultar habilidades
+            </button>
+
+            <div id="contenido-habilidades">
+                <h3>Conocimientos</h3>
+
+                <span class="etiqueta">Redacción jurídica</span>
+                <span class="etiqueta">Investigación académica</span>
+                <span class="etiqueta">LegalTech</span>
+                <span class="etiqueta">Derecho Administrativo</span>
+                <span class="etiqueta">Derecho Ambiental</span>
+                <span class="etiqueta">Relaciones institucionales</span>
+
+                <h3>Herramientas</h3>
+                <ul>
+                    <li>Microsoft Word - Avanzado.</li>
+                    <li>Microsoft PowerPoint - Avanzado.</li>
+                    <li>Microsoft Excel - Básico.</li>
+                </ul>
+
+                <h3>Idiomas</h3>
+                <ul>
+                    <li>Español - Nativo.</li>
+                    <li>Inglés - Avanzado.</li>
+                </ul>
+
+                <h3>Habilidades personales</h3>
+
+                <span class="etiqueta">Liderazgo</span>
+                <span class="etiqueta">Comunicación efectiva</span>
+                <span class="etiqueta">Trabajo en equipo</span>
+                <span class="etiqueta">Pensamiento crítico</span>
+                <span class="etiqueta">Organización</span>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+
+            <p>
+                <b>Correo electrónico:</b>
+                <a href="mailto:sashasalizarcuba@outlook.com">
+                    sashasalizarcuba@outlook.com
+                </a>
+            </p>
+
+            <p><b>Celular:</b> 912214186</p>
+
+            <p>
+                <b>LinkedIn:</b>
+                <a href="https://www.linkedin.com/in/sashasalizar"
+                   target="_blank" rel="noopener noreferrer">
+                    Visitar mi perfil profesional
+                </a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Sasha Mellrouse Salizar Cuba</p>
+        <p>Perfil Profesional</p>
+    </footer>
+
+   
+<script>
+    function mostrarHabilidades() {
+        let habilidades = document.getElementById("contenido-habilidades");
+
+        if (habilidades.style.display === "none") {
+            habilidades.style.display = "block";
+        } else {
+            habilidades.style.display = "none";
+        }
     }
-}
+</script>
+
+
+</body>
+</html>
